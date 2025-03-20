@@ -1,10 +1,10 @@
-<nav class="flex flex-row justify-center items-center">
-    <ul>
+<nav class="flex justify-center items-center">
+    <ul class="py-4 px-9 rounded-full space-x-7 text-[12px] md:text-[15px] md:px-16 md:space-x-16">
         
  <li> <a href="/galleri">Galleri</a></li>
  <li>   <a href="">Aktivitetskalender</a></li>
  <li>    <a href="/kontakt">Kontakt</a></li><li> <a href="/klubben">Klubben ▼</a>  
-            <ul class="dropdown">
+            <ul class="dropdown space-y-5 rounded-md px-4 ml-[-40px]">
                 <li><a class="" href="">Vedtægter</a> </li>
                 <li><a href="">Bestyrelsen</a></li>
                 <li> <a href="/indmeldelsensblanket"> Indmeldelse</a> </li>    
@@ -26,7 +26,6 @@ ul li {
 
 ul li a {
     display: block;
-    padding: 20px 25px;
     text-decoration: none;
     text-align: center;
     
@@ -36,13 +35,10 @@ ul li ul.dropdown li {
     display: block;
 }
 ul li ul.dropdown {
-    width: 100%;
     background-color: red;
     position: absolute;
     z-index: 999;
-    display: none;
-    padding: 0;
-}
+    display: none;}
 
 ul li a:hover {
     background: red;
