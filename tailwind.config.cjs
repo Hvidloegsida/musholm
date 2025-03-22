@@ -7,4 +7,11 @@ module.exports = {
         require('@tailwindcss/aspect-ratio'),
         require('@tailwindcss/container-queries'),
     ],
+    theme: {
+        extend: {
+            fontFamily: {
+                roboto: ["Roboto Condensed"],
+            }
+        }
+    }
   };

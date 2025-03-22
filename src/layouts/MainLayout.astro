@@ -12,6 +12,13 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+
+
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+		
 		<title>{Astro.props.title}</title>
 	</head>
 	<body>
@@ -29,3 +36,11 @@ const { title } = Astro.props;
 			
 	</body>
 </html>
+
+
+<style> 
+body {
+	background: rgb(198,216,243);
+background: linear-gradient(90deg, rgba(198,216,243,1) 0%, rgba(207,223,249,1) 100%);
+}
+</style>
