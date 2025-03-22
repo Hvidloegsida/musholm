@@ -5,10 +5,23 @@ import Button from '../components/Button.astro';
 <MainLayout title="Titel">
 <div class="relative w-full">
 	<img class="w-full object-cover" src="/hero1.jpeg" alt="">	
-	<div class="absolute inset-0 grid grid-cols-2 p-10">
+	<div class="absolute inset-0 grid grid-cols-2 py-7 gap-6 mx-4">
 		<h1 class="col-span-full place-self-center font-michrona font-bold text-center text-3xl mt-8 drop-shadow-[0_4px_3px_rgba(0,0,0,0.50)] text-white">Musholmbugtens <br> Bådeklub</h1>
-	<Button>Aktivitetskalender 2025</Button>
-	<Button>Bliv medlem nu!</Button>
+	<Button varient="primary">Aktivitetskalender 2025</Button>
+	<Button varient="primary">Bliv medlem nu!</Button>
+	<div class="col-span-full place-self-center font-michrona font-bold text-xs text-white drop-shadow-[0_4px_3px_rgba(0,0,0,0.50)] grid grid-flow-col auto-cols-max gap-4 items-center">
+		<h2>Bliv en del af vores Facebook gruppe her:</h2>
+		<Button variant="secondary">
+			
+			<svg class="fill-white" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="facebook" width="30" height="30" version="1.1" viewBox="0 0 100 100">
+				<defs>
+				  <path id="SVGID_1_" d="M0 0h100v100H0z"></path>
+				</defs>
+				<path d="M38.078 22.431v12.391H29v15.152h9.078V95h18.648V49.975H69.24s1.172-7.265 1.74-15.209H56.797v-10.36c0-1.548 2.033-3.631 4.043-3.631H71V5.001H57.186C37.617 5 38.078 20.167 38.078 22.431"></path>
+			  </svg>
+					  
+			</Button>
+	</div>
 </div>
 </div>
 
