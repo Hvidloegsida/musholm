@@ -5,12 +5,15 @@ import Button from '../components/Button.astro';
 <MainLayout title="Titel">
 <div class="relative w-full">
 	<img class="w-full object-cover" src="/hero1.jpeg" alt="">	
-	<div class="absolute inset-0 grid grid-cols-2 py-7 gap-6 mx-4">
-		<h1 class="col-span-full place-self-center font-michrona font-bold text-center text-3xl mt-8 drop-shadow-[0_4px_3px_rgba(0,0,0,0.50)] text-white">Musholmbugtens <br> Bådeklub</h1>
-	<Button varient="primary">Aktivitetskalender 2025</Button>
+	<div class="absolute inset-0 sm:mt-24 md:mt-32">
+		<h1 class=" font-michrona font-bold text-center text-3xl mt-8 drop-shadow-[0_4px_3px_rgba(0,0,0,0.50)] text-white md:text-5xl lg:text-7xl ">Musholmbugtens <br> Bådeklub</h1>
+	<div class="flex flex-row justify-center items-center gap-6 lg:gap-24 mt-14 md:mt-20 lg:mt-28">
+	
+		<Button varient="primary">Aktivitetskalender 2025</Button>
 	<Button varient="primary">Bliv medlem nu!</Button>
-	<div class="col-span-full place-self-center font-michrona font-bold text-xs text-white drop-shadow-[0_4px_3px_rgba(0,0,0,0.80)] grid grid-flow-col auto-cols-max gap-4 items-center">
-		<h2>Bliv en del af vores Facebook gruppe her:</h2>
+</div>
+	<div class=" m-11 flex items-center justify-center font-michrona font-bold text-xs text-white drop-shadow-[0_4px_3px_rgba(0,0,0,0.80)] gap-4 ">
+		<h2 class="md:text-xl lg:text-2xl">Bliv en del af vores Facebook gruppe her:</h2>
 		<Button variant="secondary">
 			
 			<svg class="fill-white" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="facebook" width="30" height="30" version="1.1" viewBox="0 0 100 100">
