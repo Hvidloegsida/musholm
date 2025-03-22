@@ -3,12 +3,19 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 ---
 <MainLayout title="Titel">
-<div class="arelative w-full">
-	<img class="w-full object-cover" src="/hero1.jpeg" alt="">
+<div class="relative w-full">
+	<img class="w-full object-cover" src="/hero1.jpeg" alt="">	
+	<div class="absolute inset-0 grid grid-cols-2 p-10">
+		<h1 class="col-span-full place-self-center font-michrona font-bold text-center text-3xl mt-8 drop-shadow-lg">Musholmbugtens <br> bådeklub</h1>
+	<Button>Aktivitetskalender 2025</Button>
+	<Button>Bliv medlem nu!</Button>
+</div>
 </div>
 
 
 <div>
 	Hej nmed dig, det her er en test, er dert under billedey?
+
+
 </div>
 </MainLayout>
