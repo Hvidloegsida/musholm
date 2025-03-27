@@ -6,20 +6,35 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="mx-2 md:mx-0 pb-10">
  <h1 class="font-michrona font-bold text-center text-3xl pt-12 mb-9 lg:pt-28 drop-shadow-[0_4px_3px_rgba(0,0,0,0.50)] text-white md:text-5xl  lg:mx-64">Aktiviteter I Musholms bådeklub 2025</h1>
 
+
+
+
+<!-- Dette er en event sektion -->
+<!-- Når der skal tilføjes en ny event skal du kopiere hele sektionen ned til -sektion slut- -->
+<!-- Sektion start -->
  <div class="wrapper">
     <div class="collapsible">
-        <input type="checkbox" id="collapsible-head">
-        <label for="collapsible-head" class="drop-shadow-[0_4px_3px_rgba(0,0,0,0.50) bg-cyan-800/70 border-white text-white font-roboto  border-4 sm:text-xl  py-4 pl-2 w-[350px] sm:w-[400px] lg:w-[450px]">14 Marts 2025 ┃ Generalforsamling</label>
-        <div class="collapsible-text w-[350px] sm:w-[400px] lg:w-[450px] opacity-80 font-roboto text-sky-950">
+        <!-- Når du skal tilføje en ny event er det vigtigt at ændre 'collapsible-head1' til det næste tal i rækken(Tjek nederste event for sidste brugte tal). -->
 
-            <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio officiis sint minus velit commodi aliquam dolorum a iure harum fuga tenetur atque, unde voluptate, illum expedita eum dolore explicabo doloremque.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iure incidunt fugit, a nisi numquam provident vero esse repellat fugiat recusandae minus sint earum ut labore cumque, harum accusamus excepturi!
+        <input type="checkbox" id="collapsible-head1">
+        <!-- Her skal du også ændre 'collapsible-head1' til det samme nummer som du har brugt oven over -->
+             <label for="collapsible-head1" class="drop-shadow-[0_4px_3px_rgba(0,0,0,0.50) bg-cyan-800/70 border-white text-white font-roboto  border-4 sm:text-xl  py-4 pl-2 w-[350px] sm:w-[400px] lg:w-[450px]">
+                <!-- Her skriver du dato og overskrift på eventen -->
+            14 Marts 2025 ┃ Generalforsamling</label>
+                <div class="collapsible-text w-[350px] sm:w-[400px] lg:w-[450px] opacity-80 font-roboto text-sky-950">
+                    <!-- p står for paragraph, så her er sektionen som indeholde informationen om eventen. Hvis ikke der er noget information, kan dele sektion bare slettes fra 'p start'  til 'p slut'-->
+                    <!-- p start -->
+                    <p>
+                        <!-- Her skriver du al den tekst der skal stå om eventen -->
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio officiis sint minus velit commodi aliquam dolorum a iure harum fuga tenetur atque, unde voluptate, illum expedita eum dolore explicabo doloremque.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iure incidunt fugit, a nisi numquam provident vero esse repellat fugiat recusandae minus sint earum ut labore cumque, harum accusamus excepturi!
                 
             </p>
+            <!-- p slut -->
         </div>
     </div>
  </div>
+ <!-- Sektion slut -->
 
 
 
