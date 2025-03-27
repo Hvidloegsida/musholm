@@ -27,10 +27,21 @@ import MainLayout from "../layouts/MainLayout.astro";
                     <p>
                         <!-- Her skriver du al den tekst der skal stå om eventen -->
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio officiis sint minus velit commodi aliquam dolorum a iure harum fuga tenetur atque, unde voluptate, illum expedita eum dolore explicabo doloremque.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iure incidunt fugit, a nisi numquam provident vero esse repellat fugiat recusandae minus sint earum ut labore cumque, harum accusamus excepturi!
+                        
+                      <br>
+                      <br>
+                      
+                      
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas iure incidunt fugit, a nisi numquam provident vero esse repellat fugiat recusandae minus sint earum ut labore cumque, harum accusamus excepturi!
                 
             </p>
             <!-- p slut -->
+
+            <!-- upload pdf i public mappe og skriv filnavn inde i "" med stråstrej foran. Teksen mellem > <  -->
+            <!-- Link dokument start -->
+            <a href="/test.pdf" download>virker det?</a>
+            <!-- Link dokument start -->
+
         </div>
     </div>
  </div>
@@ -221,6 +232,16 @@ import MainLayout from "../layouts/MainLayout.astro";
     padding-bottom: 1.25rem; /* py-5 */
     padding-left: 0.75rem;   /* px-3 */
     padding-right: 0.75rem;  /* px-3 */
+    }
+
+    a {
+        padding-top: 1.25rem;   /* py-5 */
+    padding-bottom: 1.25rem; /* py-5 */
+    padding-left: 0.75rem;   /* px-3 */
+    padding-right: 0.75rem;  /* px-3 */
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(0, 123, 210);
     }
     .wrapper {
         display: flex;
