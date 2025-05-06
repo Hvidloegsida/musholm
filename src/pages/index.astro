@@ -1,14 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
+
 ---
 <MainLayout title="Forside" metaDescription="Musholmbugtensbådeklubs hjemmeside, hvor du finder al information angående klubbens aktiviteter samt kontakt">
 <div class="relative w-full aspect-[4/3]">
-	<img class="w-full object-cover" src="/hero1.webp" alt="Billed fra badebro"   width="4032"
-    height="3024"
+	<img class="w-full object-cover h-auto" src="/hero1.webp" alt="Billed fra badebro"   width="1280"
+    height="960"
     fetchpriority="high"
     loading="eager"
-    decoding="async">	
+	srcset="
+    /hero1-480.webp 480w,
+    /hero1-768.webp 768w,
+    /hero1-1280.webp 1280w,
+    /hero1-1920.webp 1920w
+  "
+  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 100vw, 1280px">	
 	<div class="absolute inset-0 sm:mt-24 md:mt-32">
 		<h1 class=" font-michrona font-bold text-center text-3xl mt-8 drop-shadow-[0_4px_3px_rgba(0,0,0,0.50)] text-white md:text-5xl lg:text-7xl ">Musholmbugtens <br> Bådeklub</h1>
 	<div class="flex flex-row justify-center items-center gap-6 lg:gap-24 mt-14 md:mt-20 lg:mt-28">
