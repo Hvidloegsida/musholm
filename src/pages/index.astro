@@ -31,23 +31,31 @@ import Button from '../components/Button.astro';
 		
 	<a href="/blanket"><Button varient="primary">Bliv medlem nu!</Button></a>
 </div>	
-<div class="  m-[0.75rem]  flex items-center justify-center font-michrona text-xs text-white drop-shadow-[0_4px_3px_rgba(0,0,0,0.80)] gap-4 sm:m-11">
-<Button variant="secondary" aria-label="Knap til Facebook">
-
-	
-			
-			<a href="https://www.facebook.com/share/g/1CBFiGAaUE/?mibextid=wwXIfr" aria-label="Facebook">
-					<span class="md:text-xl lg:text-2xl">Bliv en del af vores Facebook gruppe her:</span>
-					
-<svg class="fill-white" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="facebook" width="30" height="30" version="1.1" viewBox="0 0 100 100" role="img" aria-label="Facebook logo">
-				<defs>
-				  <path id="SVGID_1_" d="M0 0h100v100H0z"></path>
-				</defs>
-				<path d="M38.078 22.431v12.391H29v15.152h9.078V95h18.648V49.975H69.24s1.172-7.265 1.74-15.209H56.797v-10.36c0-1.548 2.033-3.631 4.043-3.631H71V5.001H57.186C37.617 5 38.078 20.167 38.078 22.431"></path>
-			  </svg>
-				</a>	  
-			</Button>
-	</div>
+<div class="m-[0.75rem] flex items-center justify-center font-michrona text-xs text-white drop-shadow-[0_4px_3px_rgba(0,0,0,0.80)] sm:m-11">
+	<a
+	  href="https://www.facebook.com/share/g/1CBFiGAaUE/?mibextid=wwXIfr"
+	  aria-label="Facebook"
+	>
+	  <Button variant="secondary" aria-label="Knap til Facebook">
+		<span class="flex items-center gap-3 md:text-xl lg:text-2xl">
+		  Bliv en del af vores Facebook gruppe her:
+		  <svg
+			class="fill-white"
+			xmlns="http://www.w3.org/2000/svg"
+			width="30"
+			height="30"
+			viewBox="0 0 100 100"
+			role="img"
+			aria-label="Facebook logo"
+		  >
+			<path
+			  d="M38.078 22.431v12.391H29v15.152h9.078V95h18.648V49.975H69.24s1.172-7.265 1.74-15.209H56.797v-10.36c0-1.548 2.033-3.631 4.043-3.631H71V5.001H57.186C37.617 5 38.078 20.167 38.078 22.431"
+			/>
+		  </svg>
+		</span>
+	  </Button>
+	</a>
+  </div>
 </div>
 </div>
 
