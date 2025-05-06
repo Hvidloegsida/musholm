@@ -6,8 +6,8 @@ import MainLayout from "../layouts/MainLayout.astro"
 <div class="bg-white">
     <h1 class="font-michrona font-bold text-center text-3xl pt-12 mb-9 lg:pt-28 drop-shadow-[0_4px_3px_rgba(0,0,0,0.50)] md:text-5xl  lg:mx-64 lg:mb-14 text-cyan-900">Gode minder med Musholmsbugtens Bådeklub</h1>
     <section class="gap-6 flex flex-wrap justify-center items-center mx-8 mb-36">
-        <video autoplay controls class="gallery-img">
-            <source src="/sang.mp4" type="video/mp4" >
+        <video autoplay controls class="gallery-img" data-src="/sang.mp4" data-type="video">
+            <source src="/sang.mp4" type="video/mp4">
           </video>
         <img src="/g1.jpg" alt="" class="gallery-img">
         <img src="/g3.jpg" alt="" class="gallery-img">
@@ -166,23 +166,23 @@ img {
 const modalVideoSrc = document.getElementById("modal-video-src");
     
         let currentIndex = 0; // Track current image index
-        let imageArray = Array.from(images).map(img => img.src); // Store all image sources
+        let imageArray = Array.from(images).map(el => ({
+    type: el.dataset.type === "video" ? "video" : "image",
+    src: el.dataset.src || el.src
+}));
     
-        function openModal(index) {
+function openModal(index) {
     currentIndex = index;
-    const src = imageArray[currentIndex];
+    const { type, src } = imageArray[currentIndex];
 
-    if (src.endsWith(".mp4")) {
+    if (type === "video") {
         modalImg.style.display = "none";
-        modalImg.src = "";
-
         modalVideo.style.display = "block";
         modalVideoSrc.src = src;
         modalVideo.load();
     } else {
         modalVideo.style.display = "none";
         modalVideoSrc.src = "";
-
         modalImg.style.display = "block";
         modalImg.src = src;
     }
@@ -208,11 +208,11 @@ const modalVideoSrc = document.getElementById("modal-video-src");
     
         // Navigate images
         function changeImage(direction) {
-            currentIndex += direction;
-            if (currentIndex < 0) currentIndex = imageArray.length - 1; // Loop back to last image
-            if (currentIndex >= imageArray.length) currentIndex = 0; // Loop to first image
-            modalImg.src = imageArray[currentIndex];
-        }
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = imageArray.length - 1;
+    if (currentIndex >= imageArray.length) currentIndex = 0;
+    openModal(currentIndex); // Re-use modal opener
+}
     
         // Add event listeners for arrows
         leftArrow.addEventListener("click", () => changeImage(-1));
