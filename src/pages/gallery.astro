@@ -163,67 +163,86 @@ img {
         const leftArrow = document.querySelector(".left-arrow");
         const rightArrow = document.querySelector(".right-arrow");
         const modalVideo = document.getElementById("modal-video");
-const modalVideoSrc = document.getElementById("modal-video-src");
+        const modalVideoSrc = document.getElementById("modal-video-src");
     
-        let currentIndex = 0; // Track current image index
+        let currentIndex = 0;
+    
+        // Create an array of all media items with type info
         let imageArray = Array.from(images).map(el => ({
-    type: el.dataset.type === "video" ? "video" : "image",
-    src: el.dataset.src || el.src
-}));
+            type: el.dataset.type === "video" ? "video" : "image",
+            src: el.dataset.src || el.src
+        }));
     
-function openModal(index) {
-    currentIndex = index;
-    const { type, src } = imageArray[currentIndex];
-
-    if (type === "video") {
-        modalImg.style.display = "none";
-        modalVideo.style.display = "block";
-        modalVideoSrc.src = src;
-        modalVideo.load();
-    } else {
-        modalVideo.style.display = "none";
-        modalVideoSrc.src = "";
-        modalImg.style.display = "block";
-        modalImg.src = src;
-    }
-
-    modal.classList.add("active");
-}
-        // Open modal when clicking an image
+        function openModal(index) {
+            currentIndex = index;
+    
+            // Always stop and reset video first
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            modalVideoSrc.src = "";
+    
+            const { type, src } = imageArray[currentIndex];
+    
+            if (type === "video") {
+                modalImg.style.display = "none";
+                modalVideo.style.display = "block";
+                modalVideoSrc.src = src;
+                modalVideo.load();
+            } else {
+                modalVideo.style.display = "none";
+                modalImg.style.display = "block";
+                modalImg.src = src;
+            }
+    
+            modal.classList.add("active");
+        }
+    
+        // Open modal when clicking on gallery items
         images.forEach((img, index) => {
             img.addEventListener("click", () => openModal(index));
         });
     
-        // Close modal when clicking close button
+        // Close modal when clicking the close button
         modalClose.addEventListener("click", () => {
             modal.classList.remove("active");
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+            modalVideoSrc.src = "";
         });
     
-        // Close modal when clicking outside the image
+        // Close modal when clicking outside the modal content
         modal.addEventListener("click", (event) => {
             if (event.target === modal) {
                 modal.classList.remove("active");
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+                modalVideoSrc.src = "";
             }
         });
     
         // Navigate images
         function changeImage(direction) {
-    currentIndex += direction;
-    if (currentIndex < 0) currentIndex = imageArray.length - 1;
-    if (currentIndex >= imageArray.length) currentIndex = 0;
-    openModal(currentIndex); // Re-use modal opener
-}
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = imageArray.length - 1;
+            if (currentIndex >= imageArray.length) currentIndex = 0;
+            openModal(currentIndex);
+        }
     
-        // Add event listeners for arrows
+        // Arrow navigation
         leftArrow.addEventListener("click", () => changeImage(-1));
         rightArrow.addEventListener("click", () => changeImage(1));
     
-        // Keyboard navigation (left/right arrows)
+        // Keyboard navigation
         document.addEventListener("keydown", (event) => {
             if (modal.classList.contains("active")) {
                 if (event.key === "ArrowLeft") changeImage(-1);
                 if (event.key === "ArrowRight") changeImage(1);
-                if (event.key === "Escape") modal.classList.remove("active");
+                if (event.key === "Escape") {
+                    modal.classList.remove("active");
+                    modalVideo.pause();
+                    modalVideo.currentTime = 0;
+                    modalVideoSrc.src = "";
+                }
             }
         });
     });
